@@ -1,0 +1,93 @@
+pycharm
+ ctrl + b 
+ shift + F6
+ ctrl + Q 
+ ctrl + shift + up/down  
+ ctrl + P
+ alt + up/down
+
+
+安装google拼音
+sudo apt-get install fcitx fcitx-googlepinyin
+注销登录，系统设置里面添加输入法 ok
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+
+
+sudo ln -s /home/swls/miniconda2/etc/profile.d/conda.sh /etc/profile.d/conda.sh
+
+
+
+sudo apt-get install libeigen3-dev
+
+sudo apt-get install build-essential sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev sudo apt-get install build-essential qt5-default ccache libv4l-dev libavresample-dev libgphoto2-dev libopenblas-base libopenblas-dev doxygen openjdk-8-jdk pylint libvtk6-dev sudo apt-get install pkg-config
+
+
+
+
+
+apt-get install libavcodec-dev libavformat-dev libswscale-dev  libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE  \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D WITH_CUDA=ON \
+    -D ENABLE_FAST_MATH=1 \
+    -D CUDA_FAST_MATH=1 \
+    -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-9.0 \
+    -D WITH_CUBLAS=1 \
+    -D BUILD_EXAMPLES=OFF \
+    -D ENABLE_CXX11=ON \
+    -D BUILD_opencv_python3=ON  \
+    -D BUILD_opencv_python2=ON  \
+    -D BUILD_opencv_java=OFF  \
+    -D PYTHON3_EXECUTABLE=$(which python3)\
+    -D PYTHON3_INCLUDE_DIR=/usr/include/python3.5m \
+    -D PYTHON3_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.5m.so.1 \
+    -D PYTHON3_NUMPY_PATH=/usr/local/lib/python3.5/dist-packages \
+    -D PYTHON2_EXECUTABLE=$(which python2) \
+    -D PYTHON2_INCLUDE_DIR=/usr/include/python2.7 \
+    -D PYTHON2_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython2.7.so.1 \
+    -D PYTHON2_NUMPY_PATH=/usr/local/lib/python2.7/dist-packages ..
+
+
+####### Fix
+Fixed the error by making comments out of the following lines in OpenCVCompilerOptions.cmake.
+#add_extra_compiler_option(-Wmissing-prototypes)
+#add_extra_compiler_option(-Wstrict-prototypes)
+
+Since the -Wmissing-prototypes and -Wstrict-prototypes are not valid options for the gnu c++ compiler, they should not be in the build for OpenCV.
+
+
+设置环境
+如果你的opencv不是安装在/usr/local/下，而是在自己的home目录下的话，还需要设置环境变量。
+打开~/.bashrc文件，在最后加两行
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:XXXX/lib/pkgconfig
+export OpenCV_INCLUDE_DIRS=XXXX/inlcude:$OpenCV_INCLUDE_DIRS
+在这里，XXXX代表opencv的安装路径，在本文中是/home/huanglu/usr/。即
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/home/huanglu/usr/lib/pkgconfig
+export OpenCV_INCLUDE_DIRS=/home/huanglu/usr/inlcude:$OpenCV_INCLUDE_DIRS
+然后使用下面的命令使更改生效。
+source ~/.bashrc
+
+
+install darknet
+修改makefile 里面的cuda路径 cuda-9.0
+
+./darknet: error while loading shared libraries: libopencv_highgui.so.3.4: cannot open shared object file: No such file or directory
+
+sudo gedit /etc/ld.so.conf.d/OpenCV.conf
+--> /usr/local/lib
+sudo ldconfig
+
+
+
+
+
+
+
+
+

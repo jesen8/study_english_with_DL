@@ -1,1 +1,14 @@
 ﻿Lines that start with import are special: if Bazel encounters such a line in a .bazelrc file, it parses the contents of the file referenced by the import statement, too. Options specified in an imported file take precedence over options specified before the import statement. Options specified after the import statement take precedence over the options in the imported file. Options in files imported later take precedence over files imported earlier. To specify a path that is relative to the workspace root, write import %workspace%/path/to/bazelrc.   以import开头的行是特殊的：如果Bazel在.bazelrc文件中遇到这样的行，它也会解析import语句引用的文件的内容。导入文件中指定的选项优先于import语句之前指定的选项。 import语句后指定的选项优先于导入文件中的选项。稍后导入的文件中的选项优先于先前导入的文件。要指定相对于工作空间根目录的路径，请将import％workspace％/ path /写入/ bazelrc。
+
+I know that a similar question has been asked before, but none of the suggestions have helped. 
+
+Very instructive work  非常有启发性的工作
+
+The annoying part is to find out the exact names of the nodes in order to call them. 烦人的部分是找出节点的确切名称以便调用它们。
+
+Remove all the explicit device specifications for this node. This helps to make the graph more portable. 删除此节点的所有显式设备规范。 这有助于使图表更具可移植性。 explicit  明确的
+
+The rule is loaded when you explicitly build it, or if it is a dependency of the build. 显式构建规则时会加载规则，或者它是构建的依赖项。
+
+Every repository rule requires an implementation function. It contains the actual logic of the rule and is executed strictly in the Loading Phase.每个存储库规则都需要实现功能。 它包含规则的实际逻辑，并严格在加载阶段执行。
+
