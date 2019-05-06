@@ -1,0 +1,40 @@
+Nested initializer lists 嵌套的初始化列表
+
+Shapes explicitly specified 明确指定的形状
+
+mandatory  强制性
+
+represented 代表
+
+scalibility 可扩展性
+
+segmented 分段
+
+Outputs random values from a truncated normal distribution. 从截断的正态分布输出随机值。
+
+implicit relative import 隐式相对导入
+
+capacity 容量
+
+consecutive 连续
+
+entries  条目,入境次数,记录,入口
+
+Applies exponential decay to the learning rate. 将指数衰减应用于学习率。
+
+When training a model, it is often recommended to lower the learning rate as the training progresses. 在训练模型时，通常建议随着训练的进行降低学习率。
+
+This function applies an exponential decay function to a provided initial learning rate. 此函数将指数衰减函数应用于提供的初始学习速率。
+
+It requires a global_step value to compute the decayed learning rate. 它需要global_step值来计算衰减的学习速率。
+
+You can just pass a TensorFlow variable that you increment at each training step. 您只需传递在每个训练步骤中递增的TensorFlow变量。
+
+coordinator 协调器
+
+Coordinates 坐标；v. 使协调
+
+Convenience handler to determine number of views stored in an image. 用于确定存储在图像中的视图数量的便利处理程序
+
+A character code corresponding to a character which indicates end of a sequence. 与字符对应的字符代码,表示序列的结束。
+

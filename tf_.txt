@@ -1,2 +1,3 @@
 ﻿which represent units of computation 它代表计算单位
 Multiple calls to control_dependencies() can be nested, and in that case a new Operation will have control dependencies on the union of control_inputs from all active contexts. 可以嵌套对control_dependencies（）的多次调用，在这种情况下，新的Operation将对来自所有活动上下文的control_input的并集具有控制依赖性。
+TensorFlow provides several operations to slice or extract parts of a tensor, or join multiple tensors together. TensorFlow提供了几种操作来切片或提取张量的各个部分，或将多个张量连接在一起。

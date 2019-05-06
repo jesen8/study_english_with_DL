@@ -1,0 +1,7 @@
+
+
+sudo service lightdm stop
+
+sudo ./NVIDIA-Linux-x86_64-390.67.run --uninstall
+
+sudo ./NVIDIA-Linux-x86_64-390.67.run  -no-x-check -no-nouveau-check -no-opengl-files

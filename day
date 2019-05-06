@@ -1,0 +1,10 @@
+Retrain from scratch. This is a daunting task, unless you have a very representative and sufficiently large training set for your problem. If not, you are likely to end up with an over-fitted network that does really well on the training data, but not on the actual data.
+从头开始。这是一项艰巨的任务，除非您有一个非常有代表性且足够大的训练集来解决您的问题。如果没有，您很可能会得到一个过度拟合的网络，该网络在训练数据方面做得很好，但在实际数据方面则不然。
+
+
+Fine tune. Starting with an existing trained language, train on your specific additional data. This may work for problems that are close to the existing training data, but different in some subtle way, like a particularly unusual font. May work with even a small amount of training data.
+微调。从现有的训练有素的语言开始，训练您的特定附加数据。这可能适用于接近现有训练数据的问题，但在某种微妙的方式上有所不同，例如特别不寻常的字体。即使是少量的培训数据也可以使用。
+
+
+Cut off the top layer (or some arbitrary number of layers) from the network and retrain a new top layer using the new data. If fine tuning doesn't work, this is most likely the next best option. Cutting off the top layer could still work for training a completely new language or script, if you start with the most similar looking script.
+从网络中切掉顶层（或一些任意数量的层），并使用新数据重新训练新的顶层。如果微调不起作用，这很可能是下一个最佳选择。如果您从最相似的外观脚本开始，切断顶层仍然可以用于训练全新的语言或脚本。

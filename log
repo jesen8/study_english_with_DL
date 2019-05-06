@@ -1,0 +1,8 @@
+2019-02-21  在linux下编译opencv，为了使用ximgproc，因此选择重新编译opencv，而生成.so文件方便python调用。话费了一下午的时间编译opencv以及如何使用，最后终于有了结果，记录一下这些坑。1,天真的以为CMAKE_INSTALL_PREFIX可以随便写，放弃/usr/local/，结果就是多浪费一下午的时间，后面涉及到cmake编译的find_package(OpenCV REQUIRED)找路径问题，关键在于share目录，好了，自己回味。
+
+
+2019-03-22 linux下配合opencv，tf一起执行程序时，编译，链接正常。运行显示错误：
+This program was compiled against version 3.3.2 of the Protocol Buffer runtime library, which is not compatible with the installed version (3.6.1).
+最终找到问题所在，编译opencv时需要加上WITH-QT 选项，即可重新编译qt依赖的protobuf，即可与tensorflow运行的兼容。
+
+2019-04-22 ubuntu 下 ln -s src dest 命令里面的 dest 必须是当前目录下，不然后果自负，，，
